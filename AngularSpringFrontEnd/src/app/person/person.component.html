@@ -1,0 +1,23 @@
+<div>
+  <p>Angular Spring App</p>
+  <a [routerLink]="['/new']" >New Person</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let x of person">
+      <td>{{x.fname}} </td>
+      <td>{{x.lname}}</td>
+      <td><a [routerLink]="['/details' , x.id]">Details</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a [routerLink]="['/edit' , x.id]" >Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button (click) = "delete(x.id)" >Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
